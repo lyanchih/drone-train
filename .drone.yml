@@ -20,8 +20,6 @@ pipeline:
       {{ repo.name }}
       {{ build.author }}
       {{ build.link }}
-      {{ if (success build.status) }}
-        build {{ build.number }} succeeded. Good job.
-      {{ else }}
-        build {{ build.number }} failed. Fix me please.
-      {{ end }}
+      build {{ build.number }} {{ build.status }}
+      repo: {{ repo }}
+      build: {{ build }}
